@@ -1,0 +1,773 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+p, ul, li, a, button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+  text-shadow: 1px 1px 1px rgba(51, 51, 51, 0.376);
+}
+
+#nav {
+  background-color: rgba(0, 0, 0, 0);
+  height: 60px;
+  position: absolute;
+  top: 0;
+  z-index: 12;
+  width: 100%;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0 2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#nav-btn {
+  cursor: pointer;
+}
+
+#nav-btn div {
+  width: 26px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 4px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#nav-btn.show #nav-btn1 {
+  -webkit-transform: translateY(1px) rotate(45deg);
+          transform: translateY(1px) rotate(45deg);
+}
+
+#nav-btn.show #nav-btn3 {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+          transform: translateY(-13px) rotate(-45deg);
+}
+
+#nav-btn.show #nav-btn2 {
+  background-color: rgba(255, 166, 0, 0);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#sidenav {
+  background-color: rgba(56, 147, 170, 0.76);
+  width: 100%;
+  z-index: 45;
+  height: 180px;
+  position: absolute;
+  top: -201px;
+  -webkit-transition: 0.38s ease-in-out;
+  transition: 0.38s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#sidenav a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1.5rem;
+  width: 100px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(189, 163, 16, 0.034);
+  z-index: 100;
+  padding-bottom: 2px;
+}
+
+#sidenav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #bda310;
+}
+
+#sidenav.show {
+  top: 0;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.507);
+  z-index: -1;
+}
+
+#hero {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background10.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  -webkit-transform-origin-x: 50%;
+  -webkit-transition: initial !important;
+  transition: initial !important;
+}
+
+#hero-content {
+  z-index: 10;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#hero-content h1 {
+  color: #fff;
+  font-size: 4rem;
+  text-shadow: 3px 3px 10px #222;
+  letter-spacing: 1.2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#hero-content button {
+  background-color: rgba(83, 132, 160, 0.979);
+  color: #fff;
+  width: 200px;
+  border: 0;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  margin-top: 1.7em;
+  padding: 15px 0px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.fa-arrow-down {
+  background-color: rgba(83, 132, 160, 0.685);
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.466);
+  -webkit-animation: arrow 1.5s;
+          animation: arrow 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  transition: all 0.3s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.fa-arrow-down:hover {
+  color: #fff;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0, 3px);
+            transform: translate(0, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0, 3px);
+            transform: translate(0, 3px);
+  }
+  100% {
+    -webkit-transform: translate(0, -5px);
+            transform: translate(0, -5px);
+  }
+}
+
+@media (max-width: 992px) {
+  #hero-content h1 {
+    font-size: 3rem;
+  }
+  #hero-content button {
+    font-size: 0.99rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-content h1 {
+    font-size: 2.4rem;
+  }
+  #hero-content button {
+    font-size: 0.75rem;
+  }
+}
+
+#container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+
+#about {
+  background-color: #fff;
+  color: rgba(51, 51, 51, 0.822);
+  height: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.5;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about h2 {
+  font-size: 3rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#about-wrap {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  margin: auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  padding: 1rem;
+}
+
+#about-wrap p {
+  text-align: left;
+  color: rgba(51, 51, 51, 0.856);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  #about h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+  #about h2 p {
+    text-align: center;
+  }
+  #about-wrap {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #container {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  #about h2 {
+    font-size: 1.7rem;
+  }
+}
+
+#para2 {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  position: relative;
+  padding: 1rem;
+  z-index: 10;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: initial !important;
+  transition: initial !important;
+}
+
+#para2-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 5fr;
+      grid-template-columns: 3fr 5fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 1rem;
+  margin-top: 4rem;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#para2-info {
+  height: 170px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  background-color: #709FAF;
+  color: #fff;
+  padding: 1rem;
+  font-weight: 200;
+  -webkit-box-shadow: 2px 2px 10px 1px rgba(51, 51, 51, 0.253);
+          box-shadow: 2px 2px 10px 1px rgba(51, 51, 51, 0.253);
+}
+
+#para2-info p {
+  font-size: 0.8rem;
+}
+
+#para2-info h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#para2-check {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  height: 100px;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  -webkit-box-shadow: 2px 2px 10px 1px rgba(51, 51, 51, 0.322);
+          box-shadow: 2px 2px 10px 1px rgba(51, 51, 51, 0.322);
+}
+
+#para2-check div {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  height: 100%;
+  padding: 1rem;
+  font-size: 0.7rem;
+}
+
+#para2-check div h1 {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-size: 3rem;
+}
+
+#check1, #check2, #check3 {
+  color: #709FAF;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#check4 {
+  color: rgba(255, 255, 255, 0.637);
+  background-color: #709FAF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#check4 p {
+  font-size: 0.8rem;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+#line1 {
+  background-color: #fff;
+  height: 1.5px;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+#container2 {
+  z-index: 10;
+  max-width: 800px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  margin: auto;
+  padding: 1rem;
+}
+
+#container2 h2 {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  #para2-wrap {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  #para2-check {
+    display: block;
+    height: auto;
+  }
+  #para2 {
+    height: 750px;
+  }
+}
+
+#grid {
+  background-color: #EFEFEF;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 3rem 0;
+}
+
+#grid-wrapper {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 2px 5px 10px 1px rgba(51, 51, 51, 0.089);
+          box-shadow: 2px 5px 10px 1px rgba(51, 51, 51, 0.089);
+  max-width: 1000px;
+  background-color: #fff;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 450px 450px;
+      grid-template-rows: 450px 450px;
+}
+
+#grid-wrapper div {
+  padding: 5rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+#grid-wrapper div h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#grid-wrapper div p {
+  line-height: 1.2;
+  color: rgba(51, 51, 51, 0.863);
+  letter-spacing: 0.7px;
+  margin-bottom: 2.5rem;
+}
+
+#grid-wrapper div a {
+  color: #276fce;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid #3675c7;
+  margin-top: 2rem;
+  padding: 10px 30px;
+}
+
+#grid-wrapper-2 {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/13-1920x1272.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#grid-wrapper-3 {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/12.jpg");
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  #grid-wrapper {
+    max-width: 700px;
+  }
+  #grid-wrapper div {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #grid-wrapper {
+    padding: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 500px;
+    -ms-grid-rows: (400px)[4];
+        grid-template-rows: repeat(4, 400px);
+  }
+}
+
+@media (max-width: 568px) {
+  #grid-wrapper {
+    padding: 1rem;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    width: 100%;
+    -ms-grid-rows: (400px)[4];
+        grid-template-rows: repeat(4, 400px);
+  }
+}
+
+#random {
+  background-color: #333;
+}
+
+#rooms {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background9.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-bottom: 5rem;
+  z-index: 10;
+  padding: 4rem 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#rooms h1 {
+  z-index: 10;
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 3px 2px 4px rgba(51, 51, 51, 0.705);
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#rooms #rooms-grid {
+  max-width: 1000px;
+  margin: 3em auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 550px;
+      grid-template-rows: 550px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#rooms #rooms-grid div {
+  -webkit-box-shadow: 2px 5px 10px 1px rgba(224, 221, 221, 0.171);
+          box-shadow: 2px 5px 10px 1px rgba(224, 221, 221, 0.171);
+  height: auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#rooms #rooms-grid div h3 {
+  font-size: 1.7rem;
+  text-align: left !important;
+}
+
+#rooms #rooms-grid div img {
+  width: 100%;
+  height: 200px;
+}
+
+#rooms #rooms-grid div p {
+  margin-top: 20px;
+  color: rgba(51, 51, 51, 0.747) !important;
+  line-height: 1.5;
+}
+
+#rooms #rooms-grid div a {
+  text-decoration: none;
+  color: #296aa7;
+  border: 2px solid #296aa7;
+  padding: 15px 30px;
+  margin-top: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+#rooms #rooms-grid div div:nth-child(2) {
+  background-color: #fff;
+  padding: 1.5rem;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#overlay2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.507);
+  z-index: -1;
+}
+
+@media (max-width: 992px) {
+  #rooms-grid {
+    grid-gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #rooms-grid {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  #rooms {
+    padding: 20%;
+  }
+}
+
+@media (max-width: 576px) {
+  #rooms-grid {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+  }
+  #rooms {
+    padding: 10%;
+  }
+}
+
+#final {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background11.jpg");
+  background-position: center;
+  background-size: center;
+  position: relative;
+  height: 800px;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#final h2 {
+  font-size: 4rem;
+  color: #fff;
+  margin-top: -25rem;
+  text-shadow: 2px 2px 1px #333;
+}
+
+#footer {
+  background-color: #232323;
+  color: #fff;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.6rem;
+}
+/*# sourceMappingURL=style.css.map */
