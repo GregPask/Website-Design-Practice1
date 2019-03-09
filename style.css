@@ -28,7 +28,7 @@ p {
   height: 60px;
   position: absolute;
   top: 0;
-  z-index: 12;
+  z-index: 1222;
   width: 100%;
   color: #fff;
   display: -webkit-box;
@@ -150,6 +150,28 @@ p {
   transition: initial !important;
 }
 
+#heroSmall {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background10.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-position: center;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+  -webkit-transform-origin-x: 50%;
+  -webkit-transition: initial !important;
+  transition: initial !important;
+}
+
 #hero-content {
   z-index: 10;
   text-align: center;
@@ -255,6 +277,14 @@ p {
 }
 
 @media (max-width: 768px) {
+  #hero {
+    display: none;
+  }
+  #heroSmall {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   #hero-content h1 {
     font-size: 2.4rem;
   }
@@ -344,8 +374,24 @@ p {
   background-repeat: no-repeat;
   height: auto;
   position: relative;
+  display: block;
   padding: 1rem;
   z-index: 10;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: initial !important;
+  transition: initial !important;
+}
+
+#para2Small {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  position: relative;
+  padding: 1rem;
+  z-index: 10;
+  display: none;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: initial !important;
@@ -488,6 +534,12 @@ p {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  #para2 {
+    display: none;
+  }
+  #para2Small {
+    display: block;
+  }
 }
 
 @media (max-width: 576px) {
@@ -612,6 +664,7 @@ p {
   height: auto;
   width: 100%;
   margin-bottom: 5rem;
+  display: block;
   z-index: 10;
   padding: 4rem 0;
   -webkit-transition: all 0.3s ease;
@@ -694,6 +747,98 @@ p {
           align-items: center;
 }
 
+#roomsSmall {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background9.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: auto;
+  display: none !important;
+  width: 100%;
+  margin-bottom: 5rem;
+  display: block;
+  z-index: 10;
+  padding: 4rem 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#roomsSmall h1 {
+  z-index: 10;
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 3px 2px 4px rgba(51, 51, 51, 0.705);
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#roomsSmall #rooms-grid {
+  max-width: 1000px;
+  margin: 3em auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 2rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: 550px;
+      grid-template-rows: 550px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#roomsSmall #rooms-grid div {
+  -webkit-box-shadow: 2px 5px 10px 1px rgba(224, 221, 221, 0.171);
+          box-shadow: 2px 5px 10px 1px rgba(224, 221, 221, 0.171);
+  height: auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#roomsSmall #rooms-grid div h3 {
+  font-size: 1.7rem;
+  text-align: left !important;
+}
+
+#roomsSmall #rooms-grid div img {
+  width: 100%;
+  height: 200px;
+}
+
+#roomsSmall #rooms-grid div p {
+  margin-top: 20px;
+  color: rgba(51, 51, 51, 0.747) !important;
+  line-height: 1.5;
+}
+
+#roomsSmall #rooms-grid div a {
+  text-decoration: none;
+  color: #296aa7;
+  border: 2px solid #296aa7;
+  padding: 15px 30px;
+  margin-top: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+#roomsSmall #rooms-grid div div:nth-child(2) {
+  background-color: #fff;
+  padding: 1.5rem;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #overlay2 {
   position: absolute;
   top: 0;
@@ -716,6 +861,10 @@ p {
         grid-template-columns: 1fr !important;
   }
   #rooms {
+    display: none;
+  }
+  #roomsSmall {
+    display: block !important;
     padding: 20%;
   }
 }
@@ -725,7 +874,7 @@ p {
     -ms-grid-columns: 1fr !important;
         grid-template-columns: 1fr !important;
   }
-  #rooms {
+  #roomsSmall {
     padding: 10%;
   }
 }
@@ -755,6 +904,32 @@ p {
   text-shadow: 2px 2px 1px #333;
 }
 
+#finalSmall {
+  background-image: url("https://mobirise.com/html-templates/landing-page/assets/images/background11.jpg");
+  background-position: center;
+  background-size: center;
+  position: relative;
+  height: 800px;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none !important;
+}
+
+#finalSmall h2 {
+  font-size: 4rem;
+  color: #fff;
+  margin-top: -25rem;
+  text-shadow: 2px 2px 1px #333;
+}
+
 #footer {
   background-color: #232323;
   color: #fff;
@@ -769,5 +944,16 @@ p {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  #final {
+    display: none;
+  }
+  #finalSmall {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */
